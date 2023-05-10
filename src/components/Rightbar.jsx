@@ -7,11 +7,12 @@ export const Rightbar = () => {
 
   return (
     <Box
-      bgcolor="yellow"
       flex={2}
       p={2}
     >
-      Rightbar
+      <Box position="fixed">
+        Hello
+      </Box>
     </Box>
   );
 };

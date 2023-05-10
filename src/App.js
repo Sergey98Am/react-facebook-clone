@@ -2,7 +2,7 @@ import { Box, Stack, useMediaQuery } from "@mui/material";
 import { Feed } from "./components/Feed";
 import { Rightbar } from "./components/Rightbar";
 import { Sidebar } from "./components/Sidebar";
-import Navbar from "./components/Navbar/Navbar";
+import { Navbar } from "./components/Navbar/Navbar";
 import { useTheme } from "@mui/material/styles";
 
 function App() {

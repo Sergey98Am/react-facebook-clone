@@ -11,7 +11,7 @@ import { MobileMenuDrawer } from "./MobileMenu/MobileMenuDrawer"
 import { MenuItems } from "./Menu/MenuItems";
 import { RenderMenu } from "./Menu/RenderMenu";
 
-export default function Navbar({biggerThanMobile}) {
+export const Navbar = ({biggerThanMobile}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -39,8 +39,8 @@ export default function Navbar({biggerThanMobile}) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <>
+      <AppBar position="sticky">
         <Toolbar>
           {/* Mobile Drawer button */}
             {!biggerThanMobile && <MobileMenuDrawer />}
@@ -98,6 +98,6 @@ export default function Navbar({biggerThanMobile}) {
         isMenuOpen={isMenuOpen}
         handleMenuClose={handleMenuClose}
       />
-    </Box>
+    </>
   );
 }
