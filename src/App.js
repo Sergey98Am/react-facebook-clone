@@ -1,9 +1,10 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { Feed } from "./components/Feed/Feed";
 import { Rightbar } from "./components/Rightbar/Rightbar";
 import { Sidebar } from "./components/Sidebar";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useTheme } from "@mui/material/styles";
+import { Add } from "./components/Add";
 
 function App() {
 
@@ -15,11 +16,12 @@ function App() {
     <div>
       <Box>
         <Navbar biggerThanLg={biggerThanLg} />
-        <Stack direction="row" justifyContent="space-between">
+        <Box sx={{ display: 'flex' }}>
           {biggerThanSm && <Sidebar />}
           <Feed />
           {biggerThanLg && <Rightbar />}
-        </Stack>
+        </Box>
+        <Add />
       </Box>
     </div>
   );
