@@ -15,7 +15,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export const Post = () => {
   return (
-    <Card sx={{margin: 5}}>
+    <Card sx={{mb: 2}}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

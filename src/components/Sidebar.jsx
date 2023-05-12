@@ -1,27 +1,42 @@
-import { Box, Switch } from "@mui/material";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import HomeIcon from "@mui/icons-material/Home";
-import ArticleIcon from "@mui/icons-material/Article";
-import GroupIcon from "@mui/icons-material/Group";
-import StorefrontIcon from "@mui/icons-material/Storefront";
-import PersonIcon from "@mui/icons-material/Person";
-import SettingsIcon from "@mui/icons-material/Settings";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
+import {
+  AccountBox,
+  Article,
+  Group,
+  Home,
+  DarkMode,
+  Person,
+  Settings,
+  Storefront,
+} from "@mui/icons-material";
+import { Switch } from "@mui/material";
+
+const drawerWidth = {sm: 200, md: 300, lg: 350};
 
 export const Sidebar = () => {
   return (
-    <Box flex={1} p={2}>
-      <Box position="fixed">
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: "border-box" },
+      }}
+    >
+      <Toolbar />
+      <Box sx={{ overflow: "auto" }}>
         <List>
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#home">
               <ListItemIcon>
-                <HomeIcon />
+                <Home />
               </ListItemIcon>
               <ListItemText primary="Homepage" />
             </ListItemButton>
@@ -29,7 +44,7 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#pages">
               <ListItemIcon>
-                <ArticleIcon />
+                <Article />
               </ListItemIcon>
               <ListItemText primary="Pages" />
             </ListItemButton>
@@ -37,7 +52,7 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#groups">
               <ListItemIcon>
-                <GroupIcon />
+                <Group />
               </ListItemIcon>
               <ListItemText primary="Groups" />
             </ListItemButton>
@@ -45,7 +60,7 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#marketplace">
               <ListItemIcon>
-                <StorefrontIcon />
+                <Storefront />
               </ListItemIcon>
               <ListItemText primary="Marketplace" />
             </ListItemButton>
@@ -53,7 +68,7 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#friends">
               <ListItemIcon>
-                <PersonIcon />
+                <Person />
               </ListItemIcon>
               <ListItemText primary="Friends" />
             </ListItemButton>
@@ -61,7 +76,7 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#settings">
               <ListItemIcon>
-                <SettingsIcon />
+                <Settings />
               </ListItemIcon>
               <ListItemText primary="Settings" />
             </ListItemButton>
@@ -69,7 +84,7 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#profile">
               <ListItemIcon>
-                <AccountBoxIcon />
+                <AccountBox />
               </ListItemIcon>
               <ListItemText primary="Profile" />
             </ListItemButton>
@@ -77,13 +92,13 @@ export const Sidebar = () => {
           <ListItem disablePadding>
             <ListItemButton compinent="a" href="#profile">
               <ListItemIcon>
-                <DarkModeIcon />
+                <DarkMode />
               </ListItemIcon>
               <Switch />
             </ListItemButton>
           </ListItem>
         </List>
       </Box>
-    </Box>
+    </Drawer>
   );
 };

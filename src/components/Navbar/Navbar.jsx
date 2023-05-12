@@ -11,7 +11,7 @@ import { MobileMenuDrawer } from "./MobileMenu/MobileMenuDrawer"
 import { MenuItems } from "./Menu/MenuItems";
 import { RenderMenu } from "./Menu/RenderMenu";
 
-export const Navbar = ({biggerThanMobile}) => {
+export const Navbar = ({biggerThanLg}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -40,10 +40,10 @@ export const Navbar = ({biggerThanMobile}) => {
 
   return (
     <>
-      <AppBar position="sticky">
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           {/* Mobile Drawer button */}
-            {!biggerThanMobile && <MobileMenuDrawer />}
+            {!biggerThanLg && <MobileMenuDrawer />}
           {/* End Mobile Drawer button */}
 
           {/* Navber Title */}
