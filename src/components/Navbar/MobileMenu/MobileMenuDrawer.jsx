@@ -1,8 +1,10 @@
 import * as React from 'react';
+import Box from "@mui/material/Box";
 import Drawer from '@mui/material/Drawer';
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Rightbar } from "../../Rightbar"
+import { RightbarContent } from '../../Rightbar/RightbarContent';
+import { Toolbar } from '@mui/material';
 
 export const MobileMenuDrawer = () => {
   const [state, setState] = React.useState({
@@ -17,6 +19,20 @@ export const MobileMenuDrawer = () => {
     setState({ ...state, [anchor]: open });
   };
 
+  const drawerWidth = {xs: 260, sm: 300}
+
+  const rightbar = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : drawerWidth }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+      p={2}
+    >
+      <RightbarContent />
+    </Box>
+  );
+
   return (
     <div>
       {['left'].map((anchor) => (
@@ -30,14 +46,14 @@ export const MobileMenuDrawer = () => {
             onClick={toggleDrawer(anchor, true)}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> 
           <Drawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
           >
-            <div>Drawer Drawer Drawer Drawer</div>
-            <Rightbar />
+            <Toolbar />
+            {rightbar(anchor)}
           </Drawer>
         </React.Fragment>
       ))}
