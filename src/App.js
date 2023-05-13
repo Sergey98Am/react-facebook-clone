@@ -4,7 +4,7 @@ import { Rightbar } from "./components/Rightbar/Rightbar";
 import { Sidebar } from "./components/Sidebar";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useTheme } from "@mui/material/styles";
-import { Add } from "./components/Add";
+import { Add } from "./components/CreatePost/Add";
 
 function App() {
 
