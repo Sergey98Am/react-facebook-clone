@@ -22,7 +22,7 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar biggerThanLg={biggerThanLg} />
+        <Navbar biggerThanLg={biggerThanLg} mode={mode} setMode={setMode} />
         <Box sx={{ display: "flex" }}>
           {biggerThanSm && <Sidebar mode={mode} setMode={setMode} />}
           <Feed />

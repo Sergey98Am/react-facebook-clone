@@ -10,8 +10,9 @@ import { RenderMobileMenu } from "./MobileMenu/RenderMobileMenu";
 import { MobileMenuDrawer } from "./MobileMenu/MobileMenuDrawer"
 import { MenuItems } from "./Menu/MenuItems";
 import { RenderMenu } from "./Menu/RenderMenu";
+import {Switch} from '@mui/material';
 
-export const Navbar = ({biggerThanLg}) => {
+export const Navbar = ({biggerThanLg, mode, setMode}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -76,6 +77,10 @@ export const Navbar = ({biggerThanLg}) => {
             handleProfileMenuOpen={handleProfileMenuOpen}
           />
           {/* End Menu items */}
+
+          {/* Dark mode */}
+          <Switch sx={{display: {xs: 'initial', sm: 'none'}}} onChange={e => setMode(mode === "light" ? "dark" : "light")} />
+          {/* End Dark mode */}
 
           {/* Mobile menu button */}
           <MobileMenuButton
