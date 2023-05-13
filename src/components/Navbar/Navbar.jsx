@@ -79,7 +79,7 @@ export const Navbar = ({biggerThanLg, mode, setMode}) => {
           {/* End Menu items */}
 
           {/* Dark mode */}
-          <Switch sx={{display: {xs: 'initial', sm: 'none'}}} onChange={e => setMode(mode === "light" ? "dark" : "light")} />
+          <Switch sx={{display: {xs: 'inherit', sm: 'none'}}} onChange={e => setMode(mode === "light" ? "dark" : "light")} />
           {/* End Dark mode */}
 
           {/* Mobile menu button */}
