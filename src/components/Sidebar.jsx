@@ -20,7 +20,7 @@ import { Switch } from "@mui/material";
 
 const drawerWidth = {sm: 200, md: 300, lg: 350};
 
-export const Sidebar = () => {
+export const Sidebar = ({mode, setMode}) => {
   return (
     <Drawer
       variant="permanent"
@@ -94,7 +94,7 @@ export const Sidebar = () => {
               <ListItemIcon>
                 <DarkMode />
               </ListItemIcon>
-              <Switch />
+              <Switch onChange={e => setMode(mode === "light" ? "dark" : "light")} />
             </ListItemButton>
           </ListItem>
         </List>
